@@ -4,7 +4,7 @@ import CampoTexto from '../CampoTexto'
 import ListaSuspensa from '../ListaSuspensa/index.js'
 import './Formulario.css'
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const times =[
         'programação',
@@ -25,7 +25,12 @@ const Formulario = () => {
        
         event.preventDefault()
 
-        console.log(`Novo Card: ${name} ${post} ${img} ${team}`)
+        props.colaboradorCadastrado({
+            name,
+            post,
+            img,
+            team
+        })
     }
 
 
